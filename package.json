@@ -1,0 +1,14 @@
+{
+  "name": "qantra-logx",
+  "version": "1.0.0",
+  "description": "logx logging package",
+  "main": "index.js ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bahi hussein Qantra.io",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0"
+  }
+}
