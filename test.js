@@ -1,17 +1,9 @@
-const Logx             = require('./index.js');
+const logx             = require('./index.js').debug('app.js');
 
-Logx.config({
-  NODE_ENV: "development",
-  LOGX: "*"
-});
-
-const logx = Logx.debug('app.js');
-
+//listen to namespace LogxEvent
 logx.event.register('app.js:error', (obj)=>{
-  console.log('------->')
   logx.info(`${obj.level}: ${obj.namespace} : ${obj.message}`);
 });
-
 
 logx.error('Testing Error');
 logx.warn({text: 'data'});

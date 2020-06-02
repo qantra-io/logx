@@ -15,17 +15,13 @@ const regExpEscape = (s)=>{
 
 class Logx {
 
-  constructor(namespace, config){
+  constructor(namespace){
 
     this.namespace    =  namespace;
 
     this.event        = logxEvent;
 
-    this.config       = config;
-
-    this.whiteList    = this.config.LOGX;
-
-    this.currentEnv   = this.config.NODE_ENV;
+    this.whiteList    = process.env.LOGX||'';
 
     this.printable    = this._canPrint(namespace, this.whiteList);
 
@@ -63,9 +59,7 @@ class Logx {
 
     //print if name space printable
     if(this.printable) {
-      console.log('emitting', `${this.namespace}:${level}`)
       this.event.emitter.emit(`${this.namespace}:${level}`, logObj);
-      console.log(`${this.namespace} [${level}]`, this.colors[level](message));
     }
 
   }

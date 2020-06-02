@@ -1,6 +1,6 @@
 {
   "name": "qantra-logx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "logx logging package",
   "main": "index.js ",
   "scripts": {
