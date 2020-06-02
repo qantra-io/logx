@@ -60,6 +60,7 @@ class Logx {
     //print if name space printable
     if(this.printable) {
       this.event.emitter.emit(`${this.namespace}:${level}`, logObj);
+      console.log(`${this.namespace} [${level}]`, this.colors[level](message));
     }
 
   }
